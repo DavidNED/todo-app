@@ -101,6 +101,7 @@
   </div>
 
   <script>
+function updateCounters () {
   // select the element containing the count
   var totalCount = document.getElementById('total-count');
 
@@ -109,6 +110,19 @@
 
   // update the HTML inside the counter element
   totalCount.innerHTML = totalTodos;
+
+
+  var completedCount = document.getElementById('completed-count');
+  var completedTodos = document.getElementsByClassName("completed").length;
+  completedCount.innerHTML = completedTodos;
+
+  var todoCount = document.getElementById('todo-count');
+  var uncompletedTodos = totalTodos - completedTodos;
+  todoCount.innerHTML = uncompletedTodos;
+
+}
+
+updateCounters();
 </script>
   
 
